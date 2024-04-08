@@ -1,6 +1,6 @@
 #pragma once
 
-#define WINDOW_NAME "Piano"
+#define WINDOW_NAME "Tetris"
 
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
