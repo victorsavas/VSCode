@@ -2,8 +2,12 @@
 #include <window.h>
 #include <playfield.h>
 
+#include <time.h>
+
 int main()
 {
+    srand((unsigned)time(NULL));
+
     init_window();
     init_playfield();
 

@@ -12,6 +12,31 @@ void init_playfield(void)
 {
 	for (int i = 0; i < playfield_width * playfield_height; i++)
 		playfield.cells[i] = 0;
+
+	generate_bag(playfield.current_bag);
+	generate_bag(playfield.next_bag);
+}
+
+
+void generate_bag(int bag[7])
+{
+	int options[7] = {0, 1, 2, 3, 4, 5, 6};
+
+	// Shuffle the options array and copy it unto bag[7].
+
+	for (int i = 0; i < 7; i++)
+	{
+		// Choose one of the avaliable numbers 
+
+		int chosen_index = rand() % (7 - i);
+
+		bag[i] = options[chosen_index];
+
+		// Eliminate the chosen number from the selection
+
+		for (int j = chosen_index; j < 6 - i; j++)
+			options[j] = options[j + 1];
+	}
 }
 
 static int block_size = BLOCK_SIZE;
